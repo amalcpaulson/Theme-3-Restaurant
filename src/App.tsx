@@ -4,8 +4,8 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import { NotFound } from "./pages/notFound";
 import { Home } from "./pages/home";
+import NotFound from "./pages/notFound";
 
 
 
