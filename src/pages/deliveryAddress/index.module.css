@@ -1,0 +1,57 @@
+.Wrapper {
+  padding: 80px 0px 0px;
+  background: #f7f7f7;
+}
+
+.Wrapper .InnerWrapper {
+  display: flex;
+  padding: 0px 5vw;
+  gap: 5vw;
+}
+
+.Wrapper .InnerWrapper > div {
+  width: calc(65% - 2.5vw);
+}
+
+.Wrapper .InnerWrapper > .Orders {
+  border-radius: 16px;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  text-align: left;
+  width: calc(35% - 2.5vw);
+  position: sticky;
+}
+.InnerWrapper .Orders h1 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Orders .Title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.Orders .Title > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.Orders .Title > div p {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.Orders .Title > div span {
+  color: #616161;
+}
