@@ -1,0 +1,96 @@
+.Wrapper {
+  width: 100%;
+  position: relative;
+  padding: 5vh 10vw;
+  background-color: #212121;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.Wrapper .Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2vh;
+  font-size: 18px;
+}
+
+.Wrapper .Contact > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.Contact a {
+  color: white;
+}
+.working {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: flex-end;
+  font-size: 18px;
+}
+
+.working h3 {
+  border-top: 1px solid #e1b168;
+  border-bottom: 1px solid #e1b168;
+  letter-spacing: 4.32px;
+}
+
+.working > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.Online {
+  background: url(./frame.png) center center/contain no-repeat;
+  display: flex;
+  width: 330px;
+  height: 200px;
+  align-items: center;
+  padding: 15px;
+  gap: 15px;
+}
+.Online > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.Online h2 {
+  font-size: 18px;
+  text-align: left;
+}
+
+.Online img {
+  height: 80%;
+}
+
+.Online button {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 17px;
+}
+
+.Social {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.Social > div {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  a {
+    color: white;
+  }
+}
