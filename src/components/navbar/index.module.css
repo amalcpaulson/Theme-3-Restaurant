@@ -1,0 +1,47 @@
+.Wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    padding: 20px 5vw;
+    z-index: 999;
+}
+
+.Wrapper button{
+    background-color: transparent;
+}
+
+.Wrapper .Logo{
+    width: 130px;
+}
+
+.Wrapper img{
+    width: 100%;
+}
+
+.Wrapper .ButtonWrapper{
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+
+.ButtonWrapper button{
+    width: fit-content;
+    padding: 8px 20px;
+    border: 1px solid #337934;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ButtonWrapper .CartBtn{
+    border-radius: 35px;
+    background-color: #337934;
+}
+
+.ButtonWrapper .LoginBtn{
+    border-radius: 10px;
+    color: #337934;
+    font-weight: 600;
+    font-size: 18px;
+}
