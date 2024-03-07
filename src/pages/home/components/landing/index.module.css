@@ -6,41 +6,41 @@
   height: 100%;
 }
 
-.Wrapper .landing{
-    width: 60%;
-      height: 100%;
-      position: relative;
+.Wrapper .landing {
+  width: 60%;
+  height: 100%;
+  position: relative;
 }
-.landing .logos{
-    width: 150px;
-    background-color:#337934 ;
-    height: 150px;
-    padding: 20px;
-    border-radius: 50%;
-    border: 5px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: -25px;
-    left: 15px;
+.landing .logos {
+  width: 150px;
+  background-color: #337934;
+  height: 150px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
 }
-.Wrapper .Secondary{
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.Wrapper .Secondary {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .Wrapper button {
   background: url(./assets/img4.png) center center/cover no-repeat;
-  width: 15%;
+  width: calc(20% - 20px);
   border-radius: 20px;
   font-size: 18px;
   color: white;
   font-weight: 600;
 }
 
-.Wrapper img{
-    width: 100%;
-    object-fit: cover;
+.Wrapper img {
+  width: 100%;
+  object-fit: cover;
 }
