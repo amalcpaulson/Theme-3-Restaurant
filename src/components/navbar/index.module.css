@@ -5,6 +5,7 @@
     position: absolute;
     padding: 20px 5vw;
     z-index: 999;
+    top: 0;
 }
 
 .Wrapper button{

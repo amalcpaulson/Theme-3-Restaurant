@@ -6,8 +6,7 @@ import {
 } from "react-router-dom";
 import { Home } from "./pages/home";
 import NotFound from "./pages/notFound";
-
-
+import { DeliveryAddress } from "./pages/deliveryAddress";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,7 +26,10 @@ function App() {
       path: "/home",
       element: <Home />,
     },
-
+    {
+      path: "/deliveryaddress",
+      element: <DeliveryAddress />,
+    },
   ]);
   return <RouterProvider router={router} />;
 }
