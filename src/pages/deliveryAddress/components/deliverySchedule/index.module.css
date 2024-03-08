@@ -1,0 +1,40 @@
+.Wrapper {
+  border-radius: 20px;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.Wrapper > p {
+  font-weight: 600;
+  color: #424242;
+}
+
+.Wrapper > div {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Wrapper > div > div {
+  width: calc(100% / 3 - 10px);
+  border: 2px solid #BDB7B7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  border-radius: 12px;
+  color: #616161;
+  min-width: 200px;
+  background-color: #fff;
+}
+
+.Wrapper > div > div:hover{
+    background-color: #337934;
+    color: white;
+    border-color: #337934;
+}

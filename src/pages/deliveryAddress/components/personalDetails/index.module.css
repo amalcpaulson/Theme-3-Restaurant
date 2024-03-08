@@ -1,0 +1,30 @@
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.Wrapper input{
+    background-color: white;
+    border: 1px solid #CFD3D4;
+    width: 100%;
+    padding: 12px;
+    color: black;
+    border-radius: 10px;
+}
+
+.Wrapper >div{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.Wrapper button{
+    background-color: #337934;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 12px;
+}
