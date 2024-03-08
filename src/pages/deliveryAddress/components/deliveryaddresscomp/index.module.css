@@ -1,0 +1,62 @@
+.Wrapper {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 30px;
+  gap: 20px;
+}
+
+.Wrapper iframe {
+  border-radius: 20px;
+}
+
+.Wrapper .Locations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.Locations .Top {
+  display: flex;
+  justify-content: space-between;
+}
+.Locations .Top > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Locations .Top button {
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+}
+
+.Locations .InputSect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.Locations .InputSect input,
+.Locations .InputSect textarea {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 1px solid #cfd3d4;
+  color: black;
+  height: fit-content;
+}
+
+.Locations > button {
+  background-color: #337934;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+}

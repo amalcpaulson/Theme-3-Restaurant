@@ -24,6 +24,8 @@
   text-align: left;
   width: calc(35% - 2.5vw);
   position: sticky;
+  height: fit-content;
+  top: 20px;
 }
 .InnerWrapper .Orders h1 {
   color: #000;
