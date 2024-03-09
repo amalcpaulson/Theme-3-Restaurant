@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root {
   font-family: "MyFont";
   src: local("MyFont"), url("./fonts/bella.regular.ttf") format("woff");
@@ -39,7 +41,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   width: 100%;
-  font-family: "Bella";
+  font-family: "Outfit", sans-serif;
 }
 
 ::-webkit-scrollbar {
