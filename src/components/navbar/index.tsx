@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import Logo from "../../assets/Logo.png";
-import { Cart } from "../../assets/svg";
+import Cart from "../popups/cart";
+// import { Cart } from "../../assets/svg";
 type Props = {};
 
 export const Navbar = (_props: Props) => {
@@ -10,9 +11,10 @@ export const Navbar = (_props: Props) => {
         <img src={Logo} alt="" />
       </button>
       <div className={styles.ButtonWrapper}>
-        <button className={styles.CartBtn}>
+        {/* <button className={styles.CartBtn}>
           <Cart /> <p>4 items</p>
-        </button>
+        </button> */}
+		<Cart />
         <button className={styles.LoginBtn}>Login</button>
       </div>
     </div>

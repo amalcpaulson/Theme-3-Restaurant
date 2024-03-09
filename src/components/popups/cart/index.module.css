@@ -1,0 +1,133 @@
+.iconTrigger {
+	border-radius: 35px;
+	background-color: #337934;
+	color: #337934;
+}
+
+.popoverContent {
+	background-color: rgb(255, 255, 255);
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+	/* position: absolute;
+	height: 100vh;
+	width: 100vw;
+	max-width: 500px;
+	right: 0;
+	transform: translate(0%, -9%);
+	padding: 15px 20px; */
+}
+
+.popoverContent .Topset {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 20px;
+	align-items: center;
+}
+
+.popoverContent .checkoutbutton {
+	display: flex;
+	padding: 2px 2px 2px 20px;
+	width: 100%;
+	justify-content: space-between;
+	color: white;
+	font-size: 18px;
+	background-color: #eb0c1e;
+	border-radius: 20px;
+	align-items: center;
+}
+
+.popoverContent .checkoutbutton button {
+	background-color: white;
+	color: #eb0c1e;
+	padding: 10px 15px;
+	border-radius: 20px;
+}
+
+.popoverContent .SelectedItems {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.SelectedItems .Individual {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border: 0.5px solid #eb0c1e;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.SelectedItems .Individual > div {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.SelectedItems .Individual > div img {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+}
+
+.Individual .Counter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	background-color: rgb(209, 209, 209);
+	padding: 8px;
+	border-radius: 20px;
+}
+
+.Individual .Counter button {
+	font-size: 20px;
+	background-color: transparent;
+}
+
+.Individual .DetailWrap {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.Individual .Detail {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.Individual .Amount {
+	display: flex;
+	gap: 10px;
+	align-self: flex-end;
+	line-height: 1;
+	align-items: flex-end;
+}
+
+.Individual .Amount button {
+	color: grey;
+	font-size: 18px;
+}
+
+.Individual .Amount button:hover {
+	color: #eb0c1e;
+}
+
+@media screen and (max-width: 440px) {
+	.SelectedItems .Individual {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
