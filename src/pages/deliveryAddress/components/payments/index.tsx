@@ -9,36 +9,29 @@ export const Payments = (_props: Props) => {
       <h1>Payment</h1>
       <div>
         <div>
-          <div>
-            {" "}
-            <input id="cardPayment" type="checkbox" />
-            <CardPayment />
-          </div>
-          <label htmlFor="cardPayment">Card Payment</label>
+          <input id="cardPayment" type="checkbox" />
+          <label htmlFor="cardPayment">
+            <CardPayment /> <label htmlFor="cardPayment">Card Payment</label>
+          </label>
         </div>
         <div>
-          <div>
-            {" "}
-            <input id="gpay" type="checkbox" />
-            <Gpay />
-          </div>
-          <label htmlFor="gpay">Google Pay</label>
-        </div>{" "}
+          <input id="gpay" type="checkbox" />
+          <label htmlFor="gpay">
+            <Gpay /> <label htmlFor="gpay">Google Pay</label>
+          </label>
+        </div>
         <div>
-          <div>
-            {" "}
-            <input id="netbanking" type="checkbox" />
-            <Netbanking />
-          </div>
-          <label htmlFor="netbanking">Netbanking</label>
-        </div>{" "}
+          <input id="netbanking" type="checkbox" />
+          <label htmlFor="netbanking">
+            <Netbanking /> <label htmlFor="netbanking">Netbanking</label>
+          </label>
+        </div>
         <div>
-          <div>
-            {" "}
-            <input id="cod" type="checkbox" />
-            <COD />
-          </div>
-          <label htmlFor="cod">Cash on Delivery</label>
+          {" "}
+          <input id="cod" type="checkbox" />
+          <label htmlFor="cod">
+            <COD /> <label htmlFor="cod">Cash on Delivery</label>
+          </label>
         </div>
       </div>
       <p>

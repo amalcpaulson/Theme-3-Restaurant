@@ -15,19 +15,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Bella";
-  src: local("BellaRegular"),
-    url("./fonts/bella.regular.ttf") format("truetype");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "Gilroy";
-  src: local("GilroyRegular"),
-    url("./fonts/Gilroy-Bold.ttf") format("truetype");
-  font-weight: 100;
-}
-
 * {
   margin: 0;
   padding: 0;
