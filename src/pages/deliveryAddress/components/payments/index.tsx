@@ -27,12 +27,13 @@ export const Payments = (_props: Props) => {
           </label>
         </div>
         <div>
-          {" "}
+        
           <input id="cod" type="checkbox" />
           <label htmlFor="cod">
             <COD /> <label htmlFor="cod">Cash on Delivery</label>
           </label>
         </div>
+        <button>Place Order</button>
       </div>
       <p>
         By making this purchase you agree to our terms and conditions . I agree

@@ -20,7 +20,12 @@
   gap: 15px;
   width: 100%;
 }
-
+.Wrapper > div button{
+  background-color: #337934;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 12px;
+}
 .Wrapper > div > div {
   display: flex;
   align-items: center;

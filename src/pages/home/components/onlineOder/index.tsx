@@ -227,3 +227,11 @@ export const ExcitingOffers = () => {
     </div>
   );
 };
+
+
+
+export const Selections = () => {
+  return (
+    <div>index</div>
+  )
+}
