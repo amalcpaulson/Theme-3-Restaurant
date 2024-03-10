@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Discount } from "../../../../assets/svg";
 import styles from "./index.module.css";
 
@@ -132,25 +132,25 @@ export const YourMind = () => {
   );
 };
 
-import image1 from './assets/excitingoffers/img1.png'
-import image2 from './assets/excitingoffers/img2.png'
+import image1 from "./assets/excitingoffers/img1.png";
+import image2 from "./assets/excitingoffers/img2.png";
 import image3 from "./assets/excitingoffers/img3.png";
 
 export const ExcitingOffers = () => {
-    const data = [
-      {
-        text: "Claim your discount 30% daily now!",
-        image: image1,
-      },
-      {
-        text: "Claim your discount 30% daily now!",
-        image: image1,
-      },
-      {
-        text: "Claim your discount 30% daily now!",
-        image: image1,
-      },
-    ];
+  const data = [
+    {
+      text: "Claim your discount 30% daily now!",
+      image: image1,
+    },
+    {
+      text: "Claim your discount 30% daily now!",
+      image: image2,
+    },
+    {
+      text: "Claim your discount 30% daily now!",
+      image: image3,
+    },
+  ];
   const swiperRef = React.useRef<HTMLDivElement>(null);
 
   const slideWidth = () => {
@@ -204,11 +204,19 @@ export const ExcitingOffers = () => {
 
   return (
     <div className={styles.ExcitingOffers}>
-      {" "}
+      <h1>Exciting offers</h1>
       <div className={styles.SwiperContainer} ref={swiperRef}>
-        <div>
-          <img src={image1} alt="" />
-        </div>
+        {data.map((item, index) => {
+          return (
+            <div key={index}>
+              <div>
+                <h2>{item.text}</h2>
+                <button>Order now</button>
+              </div>
+              <img src={item.image} alt="" />
+            </div>
+          );
+        })}
       </div>
       <button onClick={slideLeft} className={styles.LeftNavigator}>
         <IoIosArrowForward />
