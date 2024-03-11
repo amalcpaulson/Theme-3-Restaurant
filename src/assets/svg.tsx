@@ -1,6 +1,6 @@
 type Props = {};
 
-export const Cart = (_props: Props) => {
+export const CartSvg = (_props: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
