@@ -1,5 +1,5 @@
 import React from "react";
-import { Discount } from "../../../../assets/svg";
+import { CloseBtn, Discount, Veg } from "../../../../assets/svg";
 import styles from "./index.module.css";
 
 type Props = {};
@@ -10,6 +10,7 @@ export const OnlineOders = (_props: Props) => {
       <Coupons />
       <YourMind />
       <ExcitingOffers />
+      <Selections />
     </div>
   );
 };
@@ -228,10 +229,68 @@ export const ExcitingOffers = () => {
   );
 };
 
-
+import { useDispatch } from "react-redux";
+import { navData, productData } from "./Data";
+import { addToCart } from "../../../../store/cart/cartSlice";
 
 export const Selections = () => {
+  const [active, setActive] = React.useState(0);
+  const dispatch = useDispatch();
   return (
-    <div>index</div>
-  )
-}
+    <div className={styles.SelectionsWrapper}>
+      <div className={styles.FilterContent}>
+        <p>
+          Biriyani{" "}
+          <button>
+            <CloseBtn />
+          </button>
+        </p>
+      </div>
+      <div className={styles.Selections}>
+        <div className={styles.LeftNav}>
+          {navData.map(({ name }, index) => (
+            <button
+              key={index}
+              className={active === index ? styles.activebtn : ""}
+              onClick={() => setActive(index)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+
+        <div className={styles.RightDiv}>
+          {productData.map(({ name, img, rate, quantity, id }, index) => (
+            <div key={index} className={styles.Individual}>
+              <Veg /> <img src={img} alt={`Image of ${name}`} />{" "}
+              <p className={styles.Rate}>{name}</p>{" "}
+              <p className={styles.Rate}>
+                <span className="colorText">₹ {rate}</span> per {quantity}
+                kg
+              </p>
+              <div className={styles.ImageWrap}>
+                <button
+                  aria-label={`Add ${name} to cart`}
+                  onClick={() =>
+                    dispatch(addToCart({ img, name, rate, quantity, id }))
+                  }
+                >
+                  -
+                </button>
+                <p>1</p>
+                <button
+                  aria-label={`Add ${name} to cart`}
+                  onClick={() =>
+                    dispatch(addToCart({ img, name, rate, quantity, id }))
+                  }
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

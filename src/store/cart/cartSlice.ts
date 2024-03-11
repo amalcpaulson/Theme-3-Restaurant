@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a TypeScript interface for the cart item
 interface CartItem {
-	id: string; // Assuming ID is a string, adjust if necessary
-	quantity: number;
-	rate: number;
+  id: string; // Assuming ID is a string, adjust if necessary
+  quantity: number;
+  rate: number;
+  img: string;
+  name:string
 }
 
 // Define a TypeScript interface for the slice state

@@ -290,3 +290,17 @@ export const Veg = (_props: Props) => {
     </svg>
   );
 }
+
+export const CloseBtn = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      height="15"
+      viewBox="0 0 12 12"
+      fill="none"
+    >
+      <path d="M3 3L9 9M9 3L3 9" stroke="white" stroke-linecap="round" />
+    </svg>
+  );
+}
