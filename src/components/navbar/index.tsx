@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 import Logo from "../../assets/Logo.png";
 import Cart from "../popups/cart";
-// import { Cart } from "../../assets/svg";
 import { toggleEditor } from "../../store/editor/editorSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

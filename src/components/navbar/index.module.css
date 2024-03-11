@@ -36,10 +36,7 @@
     height: fit-content;
 }
 
-.ButtonWrapper .CartBtn{
-    border-radius: 35px;
-    background-color: #337934;
-}
+
 
 .ButtonWrapper .LoginBtn{
     border-radius: 10px;
