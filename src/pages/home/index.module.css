@@ -1,3 +1,9 @@
-.Wrapper{
-    padding: 95px 0px 0px;
+.Wrapper {
+  padding: 95px 0px 0px;
+}
+
+@media screen and (max-width: 680px) {
+  .Wrapper {
+    padding: 0px;
+  }
 }

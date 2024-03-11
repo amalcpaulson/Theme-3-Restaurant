@@ -44,3 +44,31 @@
     font-weight: 600;
     font-size: 18px;
 }
+.MobNav{
+    display: none;
+}
+
+.MobNav button{
+    background-color: transparent;
+    color: #337934;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width:680px) {
+    .Wrapper {
+        display: none;
+    }
+
+    .MobNav{
+        display: flex;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-around;
+        padding: 15px;
+        z-index: 9999;
+    }
+}

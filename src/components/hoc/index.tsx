@@ -1,5 +1,6 @@
 import React from "react";
 import LandingPageEditor from "./components";
+import styles from './index.module.css'
 
 type EditorComponentProps = {
 	isEditorVisible: boolean;
@@ -11,16 +12,10 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
 	children,
 }) => {
 	return (
-		<div style={{backgroundColor: "#f0f0f0"}}>
+		<div className={styles.Wrapper}>
 			{isEditorVisible && (
 				<div
-					style={{
-						width: "300px",
-						backgroundColor: "#f0f0f0",
-						position: "fixed",
-						top: 0,
-						left: 0,
-					}}
+				className={styles.Editter}
 				>
 					{/* Sidebar content */}
 					<h2>Editor</h2>

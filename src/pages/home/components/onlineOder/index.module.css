@@ -171,9 +171,11 @@
   color: white;
 }
 .ExcitingOffers .SwiperContainer > div img {
-  min-height: 220px;
-  height: fit-content;
+  height: auto;
+  width: 140px;
   object-fit: contain;
+  position: sticky;
+  bottom: 0;
 }
 
 .ExcitingOffers .LeftNavigator,
@@ -225,7 +227,7 @@
   .ExcitingOffers .SwiperContainer > div > div h2 {
     font-size: 19px;
   }
-    .ExcitingOffers .SwiperContainer > div img {
+  .ExcitingOffers .SwiperContainer > div img {
     min-height: 160px;
     height: 160px;
   }
@@ -379,7 +381,7 @@
 @media screen and (max-width: 500px) {
   .Selections {
     flex-direction: column;
-    padding: 0px 10vw;
+ 
     gap: 15px;
   }
   .Selections .LeftNav {
@@ -387,7 +389,9 @@
     align-items: center;
     background-color: rgb(243, 243, 243);
     padding: 20px;
+    position: static;
   }
+
   .Selections .LeftNav > button {
     width: 100%;
     text-align: left;

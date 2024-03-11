@@ -1,0 +1,42 @@
+.Wrapper {
+  background-color: #f0f0f0;
+  width: 100%;
+}
+.Editter {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.Editter > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.Editter > div > h2 {
+  color: #337934;
+}
+
+.Editter > div input,.Editter > div textarea {
+  width: calc(100% - 20px);
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 0.5px solid #888;
+  border-radius: 12px;
+}
+
+.Editter > div textarea {
+
+  min-height: 120px;
+}

@@ -107,6 +107,7 @@
   .Wrapper {
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 80px;
   }
   .working {
     width: 100%;

@@ -13,7 +13,7 @@ export const DeliveryAddress = (_props: Props) => {
   const [nav, setNav] = useState(true);
 
   useEffect(() => {
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth <= 680) {
       setNav(false);
     } else {
       setNav(true);
