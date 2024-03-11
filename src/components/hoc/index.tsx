@@ -11,7 +11,7 @@ const EditorComponent: React.FC<EditorComponentProps> = ({
 	children,
 }) => {
 	return (
-		<div>
+		<div style={{backgroundColor: "#f0f0f0"}}>
 			{isEditorVisible && (
 				<div
 					style={{
