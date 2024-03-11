@@ -1,7 +1,25 @@
 .Wrapper {
   padding: 95px 0px 0px;
+  background-color: white;
+}
+.ButtonNavigation {
+  width: 100%;
+  padding: 0px 5vw;
+  display: flex;
+  gap: 8vw;
 }
 
+.ButtonNavigation button {
+  background-color: transparent;
+  color: black;
+  font-size: 19px;
+  padding: 10px 0px;
+  font-weight: 600;
+}
+.ButtonNavigation .activeBtn {
+  border-bottom: 2px solid #337934;
+  color: #337934;
+}
 @media screen and (max-width: 680px) {
   .Wrapper {
     padding: 0px;
