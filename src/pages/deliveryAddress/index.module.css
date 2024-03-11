@@ -1,8 +1,17 @@
 .Wrapper {
   padding: 95px 0px 0px;
   background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
 }
-
+.Wrapper >button{
+  background-color: transparent;
+  color: black;
+  align-self: flex-start;
+  margin-left: 6vw;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
 .Wrapper .InnerWrapper {
   display: flex;
   padding: 0px 5vw;
@@ -70,4 +79,11 @@
   .Wrapper .InnerWrapper > div {
     width: 100%;
   }
+}
+
+
+@media screen and (max-width: 500px){
+.Wrapper {
+  padding: 20px 0px 0px;
+}
 }
