@@ -9,37 +9,31 @@ export const Payments = (_props: Props) => {
       <h1>Payment</h1>
       <div>
         <div>
-          <div>
-            {" "}
-            <input id="cardPayment" type="checkbox" />
-            <CardPayment />
-          </div>
-          <label htmlFor="cardPayment">Card Payment</label>
+          <input id="cardPayment" type="checkbox" />
+          <label htmlFor="cardPayment">
+            <CardPayment /> <label htmlFor="cardPayment">Card Payment</label>
+          </label>
         </div>
         <div>
-          <div>
-            {" "}
-            <input id="gpay" type="checkbox" />
-            <Gpay />
-          </div>
-          <label htmlFor="gpay">Google Pay</label>
-        </div>{" "}
-        <div>
-          <div>
-            {" "}
-            <input id="netbanking" type="checkbox" />
-            <Netbanking />
-          </div>
-          <label htmlFor="netbanking">Netbanking</label>
-        </div>{" "}
-        <div>
-          <div>
-            {" "}
-            <input id="cod" type="checkbox" />
-            <COD />
-          </div>
-          <label htmlFor="cod">Cash on Delivery</label>
+          <input id="gpay" type="checkbox" />
+          <label htmlFor="gpay">
+            <Gpay /> <label htmlFor="gpay">Google Pay</label>
+          </label>
         </div>
+        <div>
+          <input id="netbanking" type="checkbox" />
+          <label htmlFor="netbanking">
+            <Netbanking /> <label htmlFor="netbanking">Netbanking</label>
+          </label>
+        </div>
+        <div>
+        
+          <input id="cod" type="checkbox" />
+          <label htmlFor="cod">
+            <COD /> <label htmlFor="cod">Cash on Delivery</label>
+          </label>
+        </div>
+        <button>Place Order</button>
       </div>
       <p>
         By making this purchase you agree to our terms and conditions . I agree

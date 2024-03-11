@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    position: absolute;
+    position: fixed;
     padding: 20px 5vw;
     z-index: 999;
     top: 0;
+    background-color: white;
 }
 
 .Wrapper button{

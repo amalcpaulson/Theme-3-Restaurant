@@ -20,11 +20,16 @@
   gap: 15px;
   width: 100%;
 }
-
+.Wrapper > div button{
+  background-color: #337934;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 12px;
+}
 .Wrapper > div > div {
   display: flex;
   align-items: center;
-  gap: 10vw;
+  gap: 20px;
   background-color: white;
   border: 1px solid #616161;
   width: 100%;
@@ -32,8 +37,8 @@
   border-radius: 10px;
 }
 
-.Wrapper > div > div > div {
-  width: 80px;
+.Wrapper > div > div > label {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -41,4 +46,5 @@
 
 .Wrapper input[type="checkbox"] {
   border-radius: 50%;
+  width: fit-content;
 }

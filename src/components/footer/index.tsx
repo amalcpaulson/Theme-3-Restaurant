@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 import iphone from "./iPhone.png";
+import vector from './Vector.png'
 type Props = {};
 
 export const Footer = (_props: Props) => {
@@ -49,6 +50,7 @@ export const Footer = (_props: Props) => {
           </a>
         </div>
       </div>
+      <img src={vector} alt="" />
     </div>
   );
 };

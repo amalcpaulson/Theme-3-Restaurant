@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
   padding: 5vh 5vw;
-  background-color: #212121;
+background: var(--Theme-Gray-900, #212121);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -17,6 +17,7 @@
   align-items: flex-start;
   gap: 2vh;
   font-size: 18px;
+  z-index: 2;
 }
 
 .Wrapper .Contact > div {
@@ -93,4 +94,11 @@
   a {
     color: white;
   }
+}
+
+.Wrapper >img{
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
 }
