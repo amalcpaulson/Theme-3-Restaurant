@@ -263,17 +263,15 @@ export const Selections = () => {
           {productData.map(({ name, img, rate, quantity, id }, index) => (
             <div key={index} className={styles.Individual}>
               <Veg /> <img src={img} alt={`Image of ${name}`} />{" "}
-              <p className={styles.Rate}>{name}</p>{" "}
-              <p className={styles.Rate}>
-                <span className="colorText">₹ {rate}</span> per {quantity}
-                kg
-              </p>
-              <div className={styles.ImageWrap}>
+              <p className={styles.Name}>{name}</p>{" "}
+              <p className={styles.Rate}>₹ {rate}</p>
+              <div className={styles.ButtonWrap}>
                 <button
                   aria-label={`Add ${name} to cart`}
                   onClick={() =>
                     dispatch(addToCart({ img, name, rate, quantity, id }))
                   }
+                  className={styles.Minus}
                 >
                   -
                 </button>
@@ -283,6 +281,7 @@ export const Selections = () => {
                   onClick={() =>
                     dispatch(addToCart({ img, name, rate, quantity, id }))
                   }
+                  className={styles.Add}
                 >
                   +
                 </button>

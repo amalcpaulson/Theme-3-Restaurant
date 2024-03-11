@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
   padding: 5vh 5vw;
-background: var(--Theme-Gray-900, #212121);
+  background: var(--Theme-Gray-900, #212121);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -96,9 +96,29 @@ background: var(--Theme-Gray-900, #212121);
   }
 }
 
-.Wrapper >img{
+.Wrapper > img {
   position: absolute;
   z-index: 0;
   left: 0;
   bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .Wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .working {
+    width: 100%;
+    align-items: center;
+  }
+  .working h3{
+    width: 100%;
+  }
+  .working > div{
+    align-items: center;
+  }
+  .Online{
+    width: 100%;
+  }
 }
