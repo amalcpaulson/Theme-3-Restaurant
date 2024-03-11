@@ -1,0 +1,89 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  backdrop-filter: blur(8px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-family: Poppins;
+  align-items: center;
+  justify-content: center;
+}
+
+.popoverContent {
+  height: 60vh;
+  min-height: fit-content;
+  width: 50%;
+  position: absolute;
+  min-width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8000;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 15px;
+}
+
+.Header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.popoverContent > div {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+}
+
+.popoverContent > div input {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 5px;
+  height: 45px !important;
+}
+
+
+
+.popoverContent > div iframe {
+  height: 100% !important;
+  width: 100%;
+}
+.popoverContent > .UpdateBtn {
+  width: 100%;
+  background-color: #337934;
+  color: white;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+.wrapper  .CloseBtn {
+
+  border-radius: 50%;
+  width: 50px !important;
+  height: 50px;
+  font-size: 30px;
+ 
+  color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 700px) {
+  .popoverContent {
+    height: 60vh;
+    width: 50%;
+
+    min-width: 330px;
+  }
+}
