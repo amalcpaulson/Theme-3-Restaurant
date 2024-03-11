@@ -1,7 +1,6 @@
 .Wrapper{
     display: flex;
     justify-content: space-between;
-    width: 100%;
     position: fixed;
     padding: 20px 5vw;
     z-index: 999;

@@ -7,7 +7,7 @@ import Home from "./pages/home";
 
 function App() {
 	const isEditable = useSelector(
-		(state: EditorState) => state.isEditorVisible
+		(state: any) => state.editor.isEditorVisible
 	);
 	console.log(isEditable);
 	const router = createBrowserRouter([
@@ -21,14 +21,18 @@ function App() {
 		},
 		{
 			path: "/",
-			element: <Home isEditorVisible={isEditable} />,
+			element: <Home />,
 		},
 		{
 			path: "/deliveryaddress",
 			element: <DeliveryAddress />,
 		},
 	]);
-	return <RouterProvider router={router} />;
+	return (
+		<>
+			<RouterProvider router={router} />;
+		</>
+	);
 }
 
 export default App;

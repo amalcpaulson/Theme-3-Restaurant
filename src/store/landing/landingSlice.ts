@@ -1,24 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a TypeScript interface for the slice state
-interface LandingState {
-	title: string;
-	description: string;
-	about: string;
-	contact: string;
-	terms: string;
-	referral: string;
-}
+
 
 // Initial state with types applied
 const initialState: LandingState = {
-	title: "PARADISE - FAMILY RESTAURANT & BAKESHOP",
-	description:
-		"The dishes of Kerala and India's south feature on a multi-cuisine menu at this casual restaurant.",
-	about: "The dishes of Kerala and India's south feature on a multi-cuisine menu at this casual restaurant.",
-	contact: "Paradise Family Restaurant & Bake Shop",
-	terms: "The Paradise online ordering application and app must only be used by persons over the age of eighteen (18) years, or the minimum legal age as permitted by the law or otherwise under the supervision of an adult or guardian. The pictures of the products are for presentation only. The ordered products may have differences (e.g., colour, form, etc.) towards the photos existing on the site. We are not liable in any way if the description of products is not complete. Home Delivery orders are also subject to:",
-	referral: "referral program contents here",
+	title: "Food Co. UK",
+	rating: "4.5",
+	ratingCount: "(100+ ratings)",
+	description: "Fast Food, Burger, Biryani, Desserts, Beverages",
+	address: "Shobha City Mall, Puzhakkal, Thrissur",
+	timing: "Open now 11:30Am to 4:00pm",
 };
 
 export const landingSlice = createSlice({
@@ -28,31 +20,31 @@ export const landingSlice = createSlice({
 		changeLandingTitle: (state, action: PayloadAction<string>) => {
 			state.title = action.payload;
 		},
+		changeLandingRating: (state, action: PayloadAction<string>) => {
+			state.rating = action.payload;
+		},
+		changeLandingRatingCount: (state, action: PayloadAction<string>) => {
+			state.ratingCount = action.payload;
+		},
 		changeLandingDescription: (state, action: PayloadAction<string>) => {
 			state.description = action.payload;
 		},
-		changeLandingAbout: (state, action: PayloadAction<string>) => {
-			state.about = action.payload;
+		changeLandingAddress: (state, action: PayloadAction<string>) => {
+			state.address = action.payload;
 		},
-		changeLandingContact: (state, action: PayloadAction<string>) => {
-			state.contact = action.payload;
-		},
-		changeLandingTerms: (state, action: PayloadAction<string>) => {
-			state.terms = action.payload;
-		},
-		changeLandingReferral: (state, action: PayloadAction<string>) => {
-			state.referral = action.payload;
+		changeLandingTiming: (state, action: PayloadAction<string>) => {
+			state.timing = action.payload;
 		},
 	},
 });
 
 export const {
 	changeLandingTitle,
+	changeLandingRating,
+	changeLandingRatingCount,
 	changeLandingDescription,
-	changeLandingAbout,
-	changeLandingContact,
-	changeLandingTerms,
-	changeLandingReferral,
+	changeLandingAddress,
+	changeLandingTiming,
 } = landingSlice.actions;
 
 export default landingSlice.reducer;

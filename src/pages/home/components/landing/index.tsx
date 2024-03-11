@@ -4,9 +4,7 @@ import img2 from "./assets/img2.png";
 import img3 from "./assets/img3.png";
 import logo from "../../../../assets/LogoWhite.png";
 
-type Props = {};
-
-export const Landing = (_props: Props) => {
+export const Landing = () => {
   return (
     <div className={styles.Wrapper}>
       <div className={styles.landing}>
