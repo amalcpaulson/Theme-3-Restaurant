@@ -1,0 +1,3 @@
+interface EditorState {
+	isEditorVisible: boolean;
+}

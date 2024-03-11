@@ -1,40 +1,34 @@
 import "./App.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { Home } from "./pages/home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./pages/notFound";
 import { DeliveryAddress } from "./pages/deliveryAddress";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { useSelector } from "react-redux";
+import Home from "./pages/home";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-    {
-      path: "/404",
-      element: <NotFound />,
-    },
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/deliveryaddress",
-      element: <DeliveryAddress />,
-    },
-  ]);
-	return (
-		<>
-			<Provider store={store}>
-				<RouterProvider router={router} />
-			</Provider>
-		</>
+	const isEditable = useSelector(
+		(state: EditorState) => state.isEditorVisible
 	);
+	console.log(isEditable);
+	const router = createBrowserRouter([
+		{
+			path: "*",
+			element: <NotFound />,
+		},
+		{
+			path: "/404",
+			element: <NotFound />,
+		},
+		{
+			path: "/",
+			element: <Home isEditorVisible={isEditable} />,
+		},
+		{
+			path: "/deliveryaddress",
+			element: <DeliveryAddress />,
+		},
+	]);
+	return <RouterProvider router={router} />;
 }
 
 export default App;
