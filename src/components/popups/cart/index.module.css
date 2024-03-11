@@ -14,9 +14,9 @@
   justify-content: space-between;
   gap: 20px;
   position: fixed;
-  top: 0px;
+  top: -20px;
   right: calc(-200px - 3vw);
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
   min-width: 400px;
   padding: 15px;
   border-radius: 15px;
@@ -60,8 +60,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border: 0.5px solid #eb0c1e;
-  border-radius: 20px;
+  border-bottom: 1px solid #ead4d4;
   padding: 10px;
 }
 
@@ -69,8 +68,27 @@
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
+.SelectedItems .Individual > div h2,
+.Details h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #337934;
+}
+
+.SelectedItems .Individual > div button {
+  background-color: transparent;
+  color: black;
+}
+
+.SelectedItems .Individual > div > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 .SelectedItems .Individual .Image {
   width: 80px;
   height: 80px;
@@ -86,19 +104,50 @@
   padding: 8px;
   border-radius: 12px;
   gap: 20px;
-  color: #8EBF47;
-  border: 1px solid #CFCFCF;
+  color: #8ebf47;
+  border: 1px solid #cfcfcf;
 }
 
 .Individual .Counter button {
   font-size: 20px;
   background-color: transparent;
-  color: #8EBF47;
+  color: #8ebf47;
 }
 
-@media screen and (max-width: 440px) {
-  .SelectedItems .Individual {
-    flex-direction: column;
-    align-items: flex-start;
+.Suggestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 0px;
+  background-color: #f9f9f9;
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Details > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.SubmitBtn {
+  color: white;
+  background-color: #337934;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 30px;
+}
+@media screen and (max-width: 680px) {
+  .iconTrigger{
+    display: none;
+  }
+  .popoverContent {
+    left: 0;
+    top: 0;
+    width: 100vw;
+    min-width: 300px;
   }
 }

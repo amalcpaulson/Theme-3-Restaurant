@@ -30,6 +30,7 @@ const Navbar = () => {
               dispatch(toggleEditor());
             }}
             style={{ color: "#428A39" }}
+            className={styles.EditBtn}
           >
             Edit
           </button>

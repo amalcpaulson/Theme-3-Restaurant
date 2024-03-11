@@ -22,8 +22,9 @@
 
 .Wrapper .ButtonWrapper{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     color: white;
+    align-items: center;
 }
 
 .ButtonWrapper button{
@@ -42,6 +43,13 @@
     border-radius: 10px;
     color: #337934;
     font-weight: 600;
+    font-size: 18px;
+}
+
+.ButtonWrapper .EditBtn{
+      border-radius: 10px;
+    color: #337934;
+    font-weight: 500;
     font-size: 18px;
 }
 .MobNav{

@@ -45,3 +45,24 @@
   width: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 800px) {
+  .Wrapper .Secondary,
+  .Wrapper button {
+    display: none;
+  }
+  .Wrapper .landing {
+    width: 100%;
+  }
+  .Wrapper {
+    padding: 0px 0px 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landing .logos {
+    bottom: -50px;
+    height: 120px;
+    width: 120px;
+  }
+}

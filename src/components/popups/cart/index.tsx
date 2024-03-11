@@ -68,7 +68,7 @@ const Cart: React.FC = () => {
 										/>
 										<div>
 											<div>
-												<p>{item.name}</p>
+												<h2>{item.name}</h2>
 												<button
 													onClick={() =>
 														dispatch(
@@ -78,7 +78,7 @@ const Cart: React.FC = () => {
 														)
 													}
 												>
-													×
+												x
 												</button>
 											</div>
 											<div>
@@ -119,10 +119,10 @@ const Cart: React.FC = () => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.Suggestion}>
 								<p>Any Suggestions? We will pass it on.</p>
 							</div>
-							<div>
+							<div className={styles.Details}>
 								<h2>Billing Details</h2>
 								<div>
 									<p>Item Total</p>
@@ -141,7 +141,7 @@ const Cart: React.FC = () => {
 									<p>₹{cart.totalAmount + 20 + 15.89}</p>
 								</div>
 							</div>
-							<button>Go to checkout</button>
+							<button className={styles.SubmitBtn}>Go to checkout</button>
 						</>
 					)}
 				</Popover.Content>
