@@ -1,5 +1,5 @@
-import React from "react";
-import { CloseBtn, Discount, Veg } from "../../../../assets/svg";
+import React, { useState } from "react";
+import { CloseBtn, Discount, NonVeg, Veg } from "../../../../assets/svg";
 import styles from "./index.module.css";
 
 type Props = {};
@@ -155,9 +155,6 @@ export const ExcitingOffers = () => {
   ];
   const swiperRef = React.useRef<HTMLDivElement>(null);
 
-
-
-
   return (
     <div className={styles.ExcitingOffers}>
       <h1>Exciting offers</h1>
@@ -174,7 +171,6 @@ export const ExcitingOffers = () => {
           );
         })}
       </div>
-     
     </div>
   );
 };
@@ -182,10 +178,29 @@ export const ExcitingOffers = () => {
 import { useDispatch } from "react-redux";
 import { navData, productData } from "./Data";
 import { addToCart } from "../../../../store/cart/cartSlice";
+import { FaStar } from "react-icons/fa";
+import { Arrowsvg, TickSvg } from "./assets/svg";
 
 export const Selections = () => {
   const [active, setActive] = React.useState(0);
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(
+    "Sort by price: Lower First"
+  );
+
+  const options = [
+    "Sort by price: Lower First",
+    "Sort by price: Higher First",
+    "Sort by rating: Higher First",
+  ];
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const selectOption = (option: React.SetStateAction<string>) => {
+    setSelectedOption(option);
+    setIsOpen(false); // Close dropdown after selection
+  };
   return (
     <div className={styles.SelectionsWrapper}>
       <div className={styles.FilterContent}>
@@ -195,6 +210,46 @@ export const Selections = () => {
             <CloseBtn />
           </button>
         </p>
+      </div>
+      <div className={styles.FilterSection}>
+        <div>
+          <button className={styles.Active}>
+            <Veg />
+            Veg
+          </button>
+          <button>
+            <NonVeg />
+            Non Veg
+          </button>
+        </div>
+
+        <div className={styles.dropdown}>
+          <div className={styles.dropdownHeader} onClick={toggleDropdown}>
+            <div>
+              {" "}
+              <p>
+                <Arrowsvg />
+              </p>{" "}
+              <p style={{ transform: "rotate(180deg)" }}>
+                <Arrowsvg />
+              </p>
+            </div>
+            {selectedOption}
+          </div>
+          {isOpen && (
+            <div className={styles.dropdownList}>
+              {options.map((option, index) => (
+                <div
+                  key={index}
+                  className={styles.dropdownItem}
+                  onClick={() => selectOption(option)}
+                >
+                  {option} {selectedOption == option ? <TickSvg /> : ""}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       <div className={styles.Selections}>
         <div className={styles.LeftNav}>
@@ -212,30 +267,39 @@ export const Selections = () => {
         <div className={styles.RightDiv}>
           {productData.map(({ name, img, rate, quantity, id }, index) => (
             <div key={index} className={styles.Individual}>
-              <Veg /> <img src={img} alt={`Image of ${name}`} />{" "}
+              <Veg />
+              <p className={styles.RatingTop}>
+                4.5
+                <FaStar />
+              </p>{" "}
+              <img src={img} alt={`Image of ${name}`} />{" "}
               <p className={styles.Name}>{name}</p>{" "}
               <p className={styles.Rate}>₹ {rate}</p>
-              <div className={styles.ButtonWrap}>
-                <button
-                  aria-label={`Add ${name} to cart`}
-                  onClick={() =>
-                    dispatch(addToCart({ img, name, rate, quantity, id }))
-                  }
-                  className={styles.Minus}
-                >
-                  -
-                </button>
-                <p>1</p>
-                <button
-                  aria-label={`Add ${name} to cart`}
-                  onClick={() =>
-                    dispatch(addToCart({ img, name, rate, quantity, id }))
-                  }
-                  className={styles.Add}
-                >
-                  +
-                </button>
-              </div>
+              {quantity === 0 ? (
+                <button>Add</button>
+              ) : (
+                <div className={styles.ButtonWrap}>
+                  <button
+                    aria-label={`Add ${name} to cart`}
+                    onClick={() =>
+                      dispatch(addToCart({ img, name, rate, quantity, id }))
+                    }
+                    className={styles.Minus}
+                  >
+                    <p></p>
+                  </button>
+                  <p>1</p>
+                  <button
+                    aria-label={`Add ${name} to cart`}
+                    onClick={() =>
+                      dispatch(addToCart({ img, name, rate, quantity, id }))
+                    }
+                    className={styles.Add}
+                  >
+                    +
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
