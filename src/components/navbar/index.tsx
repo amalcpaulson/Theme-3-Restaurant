@@ -4,7 +4,7 @@ import Cart from "../popups/cart";
 import { toggleEditor } from "../../store/editor/editorSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Cartsvg, HomeSvg } from "./svg";
+import {  HomeSvg } from "./svg";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -43,11 +43,7 @@ const Navbar = () => {
             <HomeSvg colors="#337934" /> Home
           </p>
         </button>
-        <button>
-          <p>
-            <Cartsvg colors="#337934" /> Cart
-          </p>
-        </button>
+        <Cart />
       </div>
     </>
   );

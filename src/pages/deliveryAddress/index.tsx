@@ -7,6 +7,7 @@ import { Payments } from "./components/payments";
 import { PersonalDetails } from "./components/personalDetails";
 import styles from "./index.module.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 type Props = {};
 
 export const DeliveryAddress = (_props: Props) => {
@@ -19,12 +20,17 @@ export const DeliveryAddress = (_props: Props) => {
       setNav(true);
     }
   }, []);
+   
+    const navigate = useNavigate();
+    const handle = () => {
+      navigate("/");
+    };
   return (
     <div className={styles.Wrapper}>
       {nav ? (
         <Navbar />
       ) : (
-        <button>
+        <button onClick={handle}>
           {" "}
           <FaArrowLeftLong />
         </button>

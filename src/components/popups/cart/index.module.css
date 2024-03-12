@@ -6,6 +6,18 @@
   gap: 20px;
 }
 
+.EmptyCartMessage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.EmptyCartMessage button {
+  background-color: transparent;
+  color: #000000;
+  font-size: 20px;
+}
+
 .popoverContent {
   background-color: rgb(255, 255, 255);
   z-index: 9999;
@@ -141,13 +153,14 @@
   border-radius: 30px;
 }
 @media screen and (max-width: 680px) {
-  .iconTrigger{
-    display: none;
-  }
   .popoverContent {
-    left: 0;
-    top: 0;
-    width: 100vw;
+    left: -70vw;
+    width: 95vw;
     min-width: 300px;
+    position: absolute;
+    top: -98vh;
+  }
+  .iconTrigger {
+    background-color: #fff !important;
   }
 }
