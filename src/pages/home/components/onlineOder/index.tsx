@@ -54,7 +54,6 @@ import img6 from "./assets/coupons/filter6.png";
 import img7 from "./assets/coupons/filter7.png";
 import img8 from "./assets/coupons/filter8.png";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
 
 export const YourMind = () => {
   const data = [
@@ -156,54 +155,8 @@ export const ExcitingOffers = () => {
   ];
   const swiperRef = React.useRef<HTMLDivElement>(null);
 
-  const slideWidth = () => {
-    const slide = swiperRef.current
-      ? (swiperRef.current.children[0] as HTMLElement)
-      : null;
-    return slide ? slide.offsetWidth + 20 : 0;
-  };
 
-  const slideLeft = () => {
-    const scrollAmount = slideWidth();
-    if (swiperRef.current) {
-      if (swiperRef.current.scrollLeft === 0) {
-        swiperRef.current.scrollTo({
-          left: swiperRef.current.scrollWidth,
-          behavior: "instant",
-        });
-        swiperRef.current.scrollBy({
-          left: -scrollAmount,
-          behavior: "smooth",
-        });
-      } else {
-        swiperRef.current.scrollBy({
-          left: -scrollAmount,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
 
-  const slideRight = () => {
-    const scrollAmount = slideWidth();
-    if (swiperRef.current) {
-      if (
-        swiperRef.current.scrollLeft + swiperRef.current.offsetWidth >=
-        swiperRef.current.scrollWidth
-      ) {
-        swiperRef.current.scrollTo({ left: 0, behavior: "instant" });
-        swiperRef.current.scrollBy({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
-      } else {
-        swiperRef.current.scrollBy({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
 
   return (
     <div className={styles.ExcitingOffers}>
@@ -221,12 +174,7 @@ export const ExcitingOffers = () => {
           );
         })}
       </div>
-      <button onClick={slideLeft} className={styles.LeftNavigator}>
-        <IoIosArrowForward />
-      </button>
-      <button onClick={slideRight} className={styles.RightNavigator}>
-        <IoIosArrowForward />
-      </button>
+     
     </div>
   );
 };

@@ -1,0 +1,52 @@
+.Wrapper {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  padding: 5vh 5vw;
+  flex-direction: column;
+}
+
+.Wrapper .ButtonWrapper {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.Wrapper .ButtonWrapper button {
+  padding: 10px 20px;
+  color: #5e6366;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #5e6366;
+}
+
+.Wrapper .ButtonWrapper > .Active {
+  background-color: #337934;
+  color: white;
+  border: 1px solid #337934;
+}
+
+.Wrapper .PhotoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.Wrapper .PhotoGrid img {
+  width: calc(100% / 5 - 20px);
+}
+
+@media screen and (max-width: 1000px) {
+  .Wrapper .PhotoGrid img {
+    width: calc(100% / 4 - 15px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Wrapper .PhotoGrid img {
+    width: calc(100% / 3 - 15px);
+  }
+}
