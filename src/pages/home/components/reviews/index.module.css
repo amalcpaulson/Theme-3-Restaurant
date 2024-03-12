@@ -1,0 +1,56 @@
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  padding: 5vh 5vw;
+  gap: 20px;
+}
+
+.ReviewItem {
+  display: flex;
+  max-width: 700px;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+.ReviewItem img {
+  width: 50px;
+  height: 50px;
+}
+
+.ReviewItem .ContentSegment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ReviewItem .ContentSegment > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ReviewItem .ContentSegment > div h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.ReviewItem .ContentSegment > div p {
+  font-size: 16px;
+  color: #4caf50;
+}
+
+.ReviewItem .ContentSegment > div .Star {
+  color: #ffb400;
+}
+
+.ReviewItem .ContentSegment > p {
+  width: 100%;
+  color: #5e6366;
+}

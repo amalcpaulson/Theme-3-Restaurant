@@ -107,19 +107,21 @@ export const YourMind = () => {
   return (
     <div className={styles.YourMind}>
       {" "}
-      <div className={styles.NavigateButton}>
-        <button onClick={scrollContentLeft} className={styles.button1}>
-          <FaArrowLeftLong />
-        </button>
-        <button
-          onClick={scrollContentRight}
-          className={styles.button2}
-          style={{ backgroundColor: "#337934", color: "white" }}
-        >
-          <FaArrowLeftLong style={{ transform: "rotate(180deg)" }} />
-        </button>
-      </div>{" "}
-      <h1>What’s on your mind</h1>
+      <div className={styles.Header}>
+        <h1>What’s on your mind</h1>{" "}
+        <div className={styles.NavigateButton}>
+          <button onClick={scrollContentLeft} className={styles.button1}>
+            <FaArrowLeftLong />
+          </button>
+          <button
+            onClick={scrollContentRight}
+            className={styles.button2}
+            style={{ backgroundColor: "#337934", color: "white" }}
+          >
+            <FaArrowLeftLong style={{ transform: "rotate(180deg)" }} />
+          </button>
+        </div>
+      </div>
       <div className={styles.contentWrapper} ref={contentRef}>
         {data.map((src) => (
           <div className={styles.imgContainer}>

@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 :root {
   font-family: "MyFont";
-  src: local("MyFont"), url("./fonts/bella.regular.ttf") format("woff");
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,12 +12,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Outfit", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   border: none;
+   font-family: "Outfit", sans-serif;
 }
 
 body {
@@ -44,11 +45,10 @@ button {
   cursor: pointer;
 }
 .colorText {
-  color: #E1B168;
+  color: #e1b168;
 }
 
-
-img{
-    -webkit-user-drag: none;
+img {
+  -webkit-user-drag: none;
   user-select: none;
 }

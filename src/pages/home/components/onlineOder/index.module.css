@@ -4,6 +4,7 @@
   width: 100%;
   padding: 20px 5vw;
   background-color: white;
+  font-family: "Outfit";
 }
 
 .Coupons {
@@ -45,10 +46,15 @@
   width: 100%;
   gap: 20px;
 }
-
+.YourMind .Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .YourMind h1 {
   font-size: 30px;
   font-weight: 600;
+  font-family: "Outfit";
   align-self: flex-start;
 }
 
@@ -82,7 +88,6 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  align-self: flex-end;
 }
 
 .YourMind .NavigateButton button {
@@ -113,6 +118,10 @@
     width: 35px;
     height: 35px;
   }
+
+  .YourMind h1 {
+    font-size: 22px;
+  }
 }
 
 .ExcitingOffers {
@@ -127,6 +136,7 @@
 }
 .ExcitingOffers h1 {
   align-self: flex-start;
+  font-size: 30px;
 }
 .ExcitingOffers .SwiperContainer {
   display: flex;
@@ -221,6 +231,12 @@
   .ExcitingOffers .SwiperContainer > div {
     width: calc(100%);
     max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ExcitingOffers h1 {
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -381,7 +397,7 @@
 @media screen and (max-width: 500px) {
   .Selections {
     flex-direction: column;
- 
+
     gap: 15px;
   }
   .Selections .LeftNav {
