@@ -179,7 +179,7 @@ import { useDispatch } from "react-redux";
 import { navData, productData } from "./Data";
 import { addToCart } from "../../../../store/cart/cartSlice";
 import { FaStar } from "react-icons/fa";
-import { Arrowsvg, TickSvg } from "./assets/svg";
+import { Arrowsvg, FilterSvg, TickSvg, TopPickssvg } from "./assets/svg";
 
 export const Selections = () => {
   const [active, setActive] = React.useState(0);
@@ -200,6 +200,11 @@ export const Selections = () => {
   const selectOption = (option: React.SetStateAction<string>) => {
     setSelectedOption(option);
     setIsOpen(false); // Close dropdown after selection
+  };
+
+  const [activated, setActivated] = useState(false);
+  const handleNavClick = () => {
+    setActivated(!activated);
   };
   return (
     <div className={styles.SelectionsWrapper}>
@@ -250,6 +255,51 @@ export const Selections = () => {
             </div>
           )}
         </div>
+      </div>
+
+      <div className={styles.FilterSectionMobile}>
+        <button onClick={handleNavClick}>
+          Filters <FilterSvg />
+        </button>
+        {activated && (
+          <div className={styles.Individuals}>
+            <div className={styles.Header}>
+              <h3>Filters and sorting</h3>
+              <button onClick={handleNavClick}>X</button>
+            </div>{" "}
+            <div>
+              <div>
+                <h3>Veg/Non-veg preference</h3>
+                <div>
+                  <button>
+                    <Veg /> Veg
+                  </button>
+                  <button>
+                    <NonVeg /> Non Veg
+                  </button>
+                </div>
+              </div>
+              <div>
+                <h3>Top Picks</h3>
+                <button>
+                  <TopPickssvg /> Top rated
+                </button>
+              </div>
+              <div>
+                <h3>Sort By</h3>
+                <div>
+                  <button>Price : Lower first</button>
+                  <button>Price : Higher first</button>
+                  <button>Rating - high to low</button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.ActionButtons}>
+              <button>Clear All</button>
+              <button>Apply(13)</button>
+            </div>
+          </div>
+        )}
       </div>
       <div className={styles.Selections}>
         <div className={styles.LeftNav}>
