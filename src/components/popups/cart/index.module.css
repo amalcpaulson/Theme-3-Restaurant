@@ -26,13 +26,15 @@
   justify-content: space-between;
   gap: 20px;
   position: fixed;
-  top: -20px;
-  right: calc(-200px - 3vw);
-  height: calc(100vh - 50px);
+  top: -45px;
+  right: calc(-200px - 4vw);
+  height: calc(100vh);
   min-width: 400px;
-  padding: 15px;
+  padding: 0px 15px 30px;
   border-radius: 15px;
   color: #000000;
+  overflow: scroll;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.20);
 }
 
 .popoverContent .Topset {
@@ -40,6 +42,10 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 15px 0px;
 }
 
 .popoverContent .Topset h2 {
@@ -55,15 +61,14 @@
 .popoverContent .Topset button {
   background-color: transparent;
   color: #000000;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .popoverContent .SelectedItems {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 100%;
-  overflow-y: scroll;
+  height: fit-content;
 }
 
 .SelectedItems .Individual {
@@ -125,7 +130,18 @@
   background-color: transparent;
   color: #8ebf47;
 }
-
+.popoverContent .applyCoupon{
+  width: 100%;
+  border: 1px dashed #8A8484;
+  background-color: white;
+  padding: 15px 8px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  border-radius: 15px;
+}
 .Suggestion {
   width: 100%;
   display: flex;
