@@ -10,3 +10,19 @@ interface LandingState {
 	address: string;
 	timing: string;
 }
+
+interface Items {
+	search: string;
+	sort: string;
+	filter: string;
+}
+
+interface Product {
+	img: string;
+	rate: number;
+	quantity: number;
+	name: string;
+	id: string;
+	rating: string;
+	tags: string[];
+}
