@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CloseBtn, Discount, NonVeg, Veg } from "../../../../assets/svg";
 import styles from "./index.module.css";
 
@@ -185,6 +185,7 @@ import { navData, productData } from "./Data";
 import { addToCart } from "../../../../store/cart/cartSlice";
 import { FaStar } from "react-icons/fa";
 import { Arrowsvg, FilterSvg, TickSvg, TopPickssvg } from "./assets/svg";
+import { addSort } from "../../../../store/items/itemSlice";
 
 export const Selections = () => {
 	const [active, setActive] = React.useState(0);
@@ -202,15 +203,45 @@ export const Selections = () => {
 
 	const toggleDropdown = () => setIsOpen(!isOpen);
 
-	const selectOption = (option: React.SetStateAction<string>) => {
-		setSelectedOption(option);
-		setIsOpen(false); // Close dropdown after selection
-	};
-
 	const [activated, setActivated] = useState(false);
 	const handleNavClick = () => {
 		setActivated(!activated);
 	};
+
+	const handleSort = (sort: string) => {
+		setSelectedOption(sort);
+		setIsOpen(false);
+		if (sort === "Sort by price: Lower First") {
+			dispatch(addSort("lowerPriceFirst"));
+		} else if (sort === "Sort by price: Higher First") {
+			dispatch(addSort("higherPriceFirst"));
+		} else if (sort === "Sort by rating: Higher First") {
+			dispatch(addSort("higherRatingFirst"));
+		}
+	};
+
+	const [sortedProducts, setSortedProducts] = useState(productData);
+
+	useEffect(() => {
+		// Sort products based on the currently selected sorting option
+		const sortProducts = () => {
+			let sorted = [...productData]; // Create a copy of the product data
+			if (selectedOption === "Sort by price: Lower First") {
+				sorted.sort((a, b) => a.rate - b.rate);
+			} else if (selectedOption === "Sort by price: Higher First") {
+				sorted.sort((a, b) => b.rate - a.rate);
+			} else if (selectedOption === "Sort by rating: Higher First") {
+				// Assuming rating is a string that can be converted to number for comparison
+				sorted.sort(
+					(a, b) => parseFloat(b.rating) - parseFloat(a.rating)
+				);
+			}
+			setSortedProducts(sorted);
+		};
+
+		sortProducts();
+	}, [selectedOption, productData]);
+
 	return (
 		<div className={styles.SelectionsWrapper}>
 			<div className={styles.FilterContent}>
@@ -255,7 +286,7 @@ export const Selections = () => {
 								<div
 									key={index}
 									className={styles.dropdownItem}
-									onClick={() => selectOption(option)}
+									onClick={() => handleSort(option)}
 								>
 									{option}{" "}
 									{selectedOption == option ? (
@@ -270,70 +301,70 @@ export const Selections = () => {
 				</div>
 			</div>
 
-      <div className={styles.FilterSectionMobile}>
-        <button onClick={handleNavClick}>
-          Filters <FilterSvg />
-        </button>
-        {activated && (
-          <div className={styles.Individuals}>
-            <div className={styles.Header}>
-              <h3>Filters and sorting</h3>
-              <button onClick={handleNavClick}>X</button>
-            </div>{" "}
-            <div className={styles.Content}>
-              <div>
-                <h3>Veg/Non-veg preference</h3>
-                <div>
-                  <button>
-                    <Veg /> Veg
-                  </button>
-                  <button>
-                    <NonVeg /> Non Veg
-                  </button>
-                </div>
-              </div>
-              <div>
-                <h3>Top Picks</h3>
-                <button>
-                  <TopPickssvg /> Top rated
-                </button>
-              </div>
-              <div>
-                <h3>Sort By</h3>
-                <div>
-                  <button>Price : Lower first</button>
-                  <button>Price : Higher first</button>
-                  <button>Rating - high to low</button>
-                </div>
-              </div>
-            </div>
-            <div className={styles.ActionButtons}>
-              <button>Clear All</button>
-              <button className={styles.apply}>Apply(13)</button>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className={styles.Selections}>
-        <div className={styles.LeftNav}>
-          {navData.map(({ name }, index) => (
-            <button
-              key={index}
-              className={active === index ? styles.activebtn : ""}
-              onClick={() => setActive(index)}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
+			<div className={styles.FilterSectionMobile}>
+				<button onClick={handleNavClick}>
+					Filters <FilterSvg />
+				</button>
+				{activated && (
+					<div className={styles.Individuals}>
+						<div className={styles.Header}>
+							<h3>Filters and sorting</h3>
+							<button onClick={handleNavClick}>X</button>
+						</div>{" "}
+						<div className={styles.Content}>
+							<div>
+								<h3>Veg/Non-veg preference</h3>
+								<div>
+									<button>
+										<Veg /> Veg
+									</button>
+									<button>
+										<NonVeg /> Non Veg
+									</button>
+								</div>
+							</div>
+							<div>
+								<h3>Top Picks</h3>
+								<button>
+									<TopPickssvg /> Top rated
+								</button>
+							</div>
+							<div>
+								<h3>Sort By</h3>
+								<div>
+									<button>Price : Lower first</button>
+									<button>Price : Higher first</button>
+									<button>Rating - high to low</button>
+								</div>
+							</div>
+						</div>
+						<div className={styles.ActionButtons}>
+							<button>Clear All</button>
+							<button className={styles.apply}>Apply(13)</button>
+						</div>
+					</div>
+				)}
+			</div>
+			<div className={styles.Selections}>
+				<div className={styles.LeftNav}>
+					{navData.map(({ name }, index) => (
+						<button
+							key={index}
+							className={active === index ? styles.activebtn : ""}
+							onClick={() => setActive(index)}
+						>
+							{name}
+						</button>
+					))}
+				</div>
 
 				<div className={styles.RightDiv}>
-					{productData.map(
-						({ name, img, rate, quantity, id }, index) => (
+					{sortedProducts.map(
+						({ name, img, rate, quantity, id, rating }, index) => (
 							<div key={index} className={styles.Individual}>
 								<Veg />
 								<p className={styles.RatingTop}>
-									4.5
+									{rating}
 									<FaStar />
 								</p>{" "}
 								<img src={img} alt={`Image of ${name}`} />{" "}

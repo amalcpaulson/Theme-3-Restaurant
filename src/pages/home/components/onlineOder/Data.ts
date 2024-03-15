@@ -25,7 +25,7 @@ export const productData: Product[] = [
 		quantity: 1,
 		name: "Gluten-free pasta",
 		id: "8d1fd0b3-3157-42d2-9c00-77ece9643fc7",
-		rating: "Good",
+		rating: "2.6",
 		tags: ["Fast Food items"],
 	},
 	{
