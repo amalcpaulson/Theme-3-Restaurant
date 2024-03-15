@@ -7,7 +7,7 @@ import {
   removeFromCart,
 } from "../../../store/cart/cartSlice";
 import React, { useEffect, useState } from "react";
-import { CartSvg } from "../../../assets/svg";
+import { CartSvg, Discount } from "../../../assets/svg";
 import { Cartsvg } from "../../navbar/svg";
 import { useNavigate } from "react-router-dom";
 
@@ -79,7 +79,7 @@ const Cart: React.FC = () => {
                   <h2>Delivery</h2>
                   <p>Standard (40 min)</p>
                 </div>
-                <Popover.Close>×</Popover.Close>
+                <Popover.Close>X</Popover.Close>
               </div>
               <div className={styles.SelectedItems}>
                 {cart.cart.map((item) => (
@@ -136,6 +136,9 @@ const Cart: React.FC = () => {
                   </div>
                 ))}
               </div>
+              <button className={styles.applyCoupon}>
+                <Discount /> Apply Coupon
+              </button>
               <div className={styles.Suggestion}>
                 <p>Any Suggestions? We will pass it on.</p>
               </div>

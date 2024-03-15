@@ -270,62 +270,62 @@ export const Selections = () => {
 				</div>
 			</div>
 
-			<div className={styles.FilterSectionMobile}>
-				<button onClick={handleNavClick}>
-					Filters <FilterSvg />
-				</button>
-				{activated && (
-					<div className={styles.Individuals}>
-						<div className={styles.Header}>
-							<h3>Filters and sorting</h3>
-							<button onClick={handleNavClick}>X</button>
-						</div>{" "}
-						<div>
-							<div>
-								<h3>Veg/Non-veg preference</h3>
-								<div>
-									<button>
-										<Veg /> Veg
-									</button>
-									<button>
-										<NonVeg /> Non Veg
-									</button>
-								</div>
-							</div>
-							<div>
-								<h3>Top Picks</h3>
-								<button>
-									<TopPickssvg /> Top rated
-								</button>
-							</div>
-							<div>
-								<h3>Sort By</h3>
-								<div>
-									<button>Price : Lower first</button>
-									<button>Price : Higher first</button>
-									<button>Rating - high to low</button>
-								</div>
-							</div>
-						</div>
-						<div className={styles.ActionButtons}>
-							<button>Clear All</button>
-							<button>Apply(13)</button>
-						</div>
-					</div>
-				)}
-			</div>
-			<div className={styles.Selections}>
-				<div className={styles.LeftNav}>
-					{navData.map(({ name }, index) => (
-						<button
-							key={index}
-							className={active === index ? styles.activebtn : ""}
-							onClick={() => setActive(index)}
-						>
-							{name}
-						</button>
-					))}
-				</div>
+      <div className={styles.FilterSectionMobile}>
+        <button onClick={handleNavClick}>
+          Filters <FilterSvg />
+        </button>
+        {activated && (
+          <div className={styles.Individuals}>
+            <div className={styles.Header}>
+              <h3>Filters and sorting</h3>
+              <button onClick={handleNavClick}>X</button>
+            </div>{" "}
+            <div className={styles.Content}>
+              <div>
+                <h3>Veg/Non-veg preference</h3>
+                <div>
+                  <button>
+                    <Veg /> Veg
+                  </button>
+                  <button>
+                    <NonVeg /> Non Veg
+                  </button>
+                </div>
+              </div>
+              <div>
+                <h3>Top Picks</h3>
+                <button>
+                  <TopPickssvg /> Top rated
+                </button>
+              </div>
+              <div>
+                <h3>Sort By</h3>
+                <div>
+                  <button>Price : Lower first</button>
+                  <button>Price : Higher first</button>
+                  <button>Rating - high to low</button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.ActionButtons}>
+              <button>Clear All</button>
+              <button className={styles.apply}>Apply(13)</button>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className={styles.Selections}>
+        <div className={styles.LeftNav}>
+          {navData.map(({ name }, index) => (
+            <button
+              key={index}
+              className={active === index ? styles.activebtn : ""}
+              onClick={() => setActive(index)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
 
 				<div className={styles.RightDiv}>
 					{productData.map(
