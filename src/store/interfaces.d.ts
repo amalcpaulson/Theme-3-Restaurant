@@ -26,4 +26,5 @@ interface Product {
 	id: string;
 	rating: string;
 	tags: string[];
+	veg: boolean;
 }

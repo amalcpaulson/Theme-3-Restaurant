@@ -194,7 +194,7 @@ export const Selections = () => {
 	const [selectedOption, setSelectedOption] = useState(
 		"Sort by price: Lower First"
 	);
-
+	const [isVeg, setIsVeg] = useState("");
 	const options = [
 		"Sort by price: Lower First",
 		"Sort by price: Higher First",
@@ -223,24 +223,42 @@ export const Selections = () => {
 	const [sortedProducts, setSortedProducts] = useState(productData);
 
 	useEffect(() => {
-		// Sort products based on the currently selected sorting option
-		const sortProducts = () => {
-			let sorted = [...productData]; // Create a copy of the product data
-			if (selectedOption === "Sort by price: Lower First") {
-				sorted.sort((a, b) => a.rate - b.rate);
-			} else if (selectedOption === "Sort by price: Higher First") {
-				sorted.sort((a, b) => b.rate - a.rate);
-			} else if (selectedOption === "Sort by rating: Higher First") {
-				// Assuming rating is a string that can be converted to number for comparison
-				sorted.sort(
-					(a, b) => parseFloat(b.rating) - parseFloat(a.rating)
-				);
-			}
-			setSortedProducts(sorted);
-		};
+		let filtered = productData.filter((product) => {
+			if (isVeg === "veg") return product.veg;
+			else if (isVeg === "nonVeg") return !product.veg;
+			else return true; // If isVeg is "", don't filter out any items
+		});
 
-		sortProducts();
-	}, [selectedOption, productData]);
+		// Then sort
+		filtered.sort((a, b) => {
+			if (selectedOption === "Sort by price: Lower First") {
+				return a.rate - b.rate;
+			} else if (selectedOption === "Sort by price: Higher First") {
+				return b.rate - a.rate;
+			} else if (selectedOption === "Sort by rating: Higher First") {
+				return parseFloat(b.rating) - parseFloat(a.rating);
+			}
+			return 0;
+		});
+
+		setSortedProducts(filtered);
+	}, [selectedOption, isVeg]);
+
+	const handleVeg = () => {
+		if (isVeg === "veg") {
+			setIsVeg("");
+		} else {
+			setIsVeg("veg");
+		}
+	};
+
+	const handleNonVeg = () => {
+		if (isVeg === "nonVeg") {
+			setIsVeg("");
+		} else {
+			setIsVeg("nonVeg");
+		}
+	};
 
 	return (
 		<div className={styles.SelectionsWrapper}>
@@ -254,11 +272,17 @@ export const Selections = () => {
 			</div>
 			<div className={styles.FilterSection}>
 				<div>
-					<button className={styles.Active}>
+					<button
+						className={`${isVeg === "veg" ? styles.Active : ""}`}
+						onClick={handleVeg}
+					>
 						<Veg />
 						Veg
 					</button>
-					<button>
+					<button
+						className={`${isVeg === "nonVeg" ? styles.Active : ""}`}
+						onClick={handleNonVeg}
+					>
 						<NonVeg />
 						Non Veg
 					</button>
@@ -360,9 +384,12 @@ export const Selections = () => {
 
 				<div className={styles.RightDiv}>
 					{sortedProducts.map(
-						({ name, img, rate, quantity, id, rating }, index) => (
+						(
+							{ name, img, rate, quantity, id, rating, veg },
+							index
+						) => (
 							<div key={index} className={styles.Individual}>
-								<Veg />
+								{veg ? <Veg /> : <NonVeg />}
 								<p className={styles.RatingTop}>
 									{rating}
 									<FaStar />

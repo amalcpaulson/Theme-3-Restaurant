@@ -9,6 +9,7 @@ export const productData: Product[] = [
 		id: "ccdd7623-f5c4-43b6-bb17-88ccc6f1dc60",
 		rating: "4.3",
 		tags: ["Biriyani"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -18,6 +19,7 @@ export const productData: Product[] = [
 		id: "83ee377c-b3cb-4671-a599-4dd8dee27373",
 		rating: "4.6",
 		tags: ["Noodles"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -27,6 +29,7 @@ export const productData: Product[] = [
 		id: "8d1fd0b3-3157-42d2-9c00-77ece9643fc7",
 		rating: "2.6",
 		tags: ["Fast Food items"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -36,6 +39,7 @@ export const productData: Product[] = [
 		id: "dd4553f3-8e93-4156-bfd2-e3928b285659",
 		rating: "3.8",
 		tags: ["Noodles"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -45,6 +49,7 @@ export const productData: Product[] = [
 		id: "bff509c5-fe30-4dbf-9809-f878e4f959ce",
 		rating: "2.1",
 		tags: ["Fast Food items"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -54,6 +59,7 @@ export const productData: Product[] = [
 		id: "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
 		rating: "4.8",
 		tags: ["Meals"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -63,6 +69,7 @@ export const productData: Product[] = [
 		id: "1q2w3e4r-5t6y-7u8i-9o0p-a1s2d3f4g5h6",
 		rating: "4.9",
 		tags: ["Fast Food items"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -72,6 +79,7 @@ export const productData: Product[] = [
 		id: "z1x2c3v4-b5n6-m7n8-l9k8-j7h6g5f4d3s2",
 		rating: "4.5",
 		tags: ["Meals"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -81,6 +89,7 @@ export const productData: Product[] = [
 		id: "0p9o8i7u-6y5t-4r3e-2w1q-a1s2d3f4g5h6",
 		rating: "3.9",
 		tags: ["Egg Items"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -90,6 +99,7 @@ export const productData: Product[] = [
 		id: "m1n2b3v4-c5x6-z7a8-s9d8-f7g6h5j4k3l2",
 		rating: "4.2",
 		tags: ["Noodles"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -99,6 +109,7 @@ export const productData: Product[] = [
 		id: "uuid-001",
 		rating: "4.7",
 		tags: ["Cake"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -108,6 +119,7 @@ export const productData: Product[] = [
 		id: "uuid-002",
 		rating: "4.5",
 		tags: ["Egg Items"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -117,6 +129,7 @@ export const productData: Product[] = [
 		id: "uuid-003",
 		rating: "4.2",
 		tags: ["Fast Food items"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -126,6 +139,7 @@ export const productData: Product[] = [
 		id: "uuid-004",
 		rating: "4.8",
 		tags: ["Meals"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -135,6 +149,7 @@ export const productData: Product[] = [
 		id: "uuid-005",
 		rating: "4.9",
 		tags: ["Biriyani"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -144,6 +159,7 @@ export const productData: Product[] = [
 		id: "uuid-006",
 		rating: "4.3",
 		tags: ["Noodles"],
+		veg: true,
 	},
 	{
 		img: demo,
@@ -153,6 +169,7 @@ export const productData: Product[] = [
 		id: "uuid-007",
 		rating: "4.1",
 		tags: ["Fried Rice"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -162,6 +179,7 @@ export const productData: Product[] = [
 		id: "uuid-008",
 		rating: "4.6",
 		tags: ["Cake"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -171,6 +189,7 @@ export const productData: Product[] = [
 		id: "uuid-009",
 		rating: "4.0",
 		tags: ["Egg Items"],
+		veg: false,
 	},
 	{
 		img: demo,
@@ -180,6 +199,7 @@ export const productData: Product[] = [
 		id: "uuid-010",
 		rating: "3.8",
 		tags: ["Fast Food items"],
+		veg: false,
 	},
 ];
 
