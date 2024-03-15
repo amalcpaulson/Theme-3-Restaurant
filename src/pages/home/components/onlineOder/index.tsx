@@ -103,6 +103,7 @@ export const YourMind = () => {
 			contentRef.current.scrollBy({ left: 300, behavior: "smooth" }); // Change 300 to your card width or desired scroll amount
 		}
 	};
+	const dispatch = useDispatch();
 	return (
 		<div className={styles.YourMind}>
 			{" "}
@@ -128,11 +129,18 @@ export const YourMind = () => {
 			</div>
 			<div className={styles.contentWrapper} ref={contentRef}>
 				{data.map((src) => (
-					<div className={styles.imgContainer}>
-						<img src={src.img} loading="lazy" />
-						<h2>{src.title}</h2>
-						<div className={styles.line}></div>
-					</div>
+					<a
+						href="#selection"
+						onClick={() => {
+							dispatch(addFilter(src.title));
+						}}
+					>
+						<div className={styles.imgContainer} key={src.title}>
+							<img src={src.img} loading="lazy" />
+							<h2>{src.title}</h2>
+							<div className={styles.line}></div>
+						</div>
+					</a>
 				))}
 			</div>
 		</div>
@@ -180,14 +188,17 @@ export const ExcitingOffers = () => {
 	);
 };
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { navData, productData } from "./Data";
 import { addToCart } from "../../../../store/cart/cartSlice";
 import { FaStar } from "react-icons/fa";
 import { Arrowsvg, FilterSvg, TickSvg, TopPickssvg } from "./assets/svg";
-import { addSort } from "../../../../store/items/itemSlice";
+import { addFilter, addSort } from "../../../../store/items/itemSlice";
+import { RootState } from "../../../../store/store";
 
 export const Selections = () => {
+	const filterTag = useSelector((state: RootState) => state.item.filter);
+	const search = useSelector((state: RootState) => state.item.search);
 	const [active, setActive] = React.useState(0);
 	const dispatch = useDispatch();
 	const [isOpen, setIsOpen] = useState(false);
@@ -219,17 +230,39 @@ export const Selections = () => {
 			dispatch(addSort("higherRatingFirst"));
 		}
 	};
-
 	const [sortedProducts, setSortedProducts] = useState(productData);
 
 	useEffect(() => {
-		let filtered = productData.filter((product) => {
-			if (isVeg === "veg") return product.veg;
-			else if (isVeg === "nonVeg") return !product.veg;
-			else return true; // If isVeg is "", don't filter out any items
-		});
+		let filtered = productData
+			.filter((product) => {
+				// Filter based on the veg/non-veg selection
+				if (isVeg === "veg") return product.veg;
+				else if (isVeg === "nonVeg") return !product.veg;
+				return true; // If isVeg is "", don't filter out any items
+			})
+			.filter((product) => {
+				// Filter based on the selected filterTag
+				if (filterTag) return product.tags.includes(filterTag);
+				return true; // If no filterTag is selected, don't filter out any items
+			})
+			.filter((product) => {
+				// Filter based on the search string for similar results
+				if (search) {
+					const searchLower = search.toLowerCase();
+					const searchTerms = searchLower.split(/\s+/); // Split the search string into words
 
-		// Then sort
+					return searchTerms.some(
+						(term) =>
+							product.name.toLowerCase().includes(term) ||
+							product.tags.some((tag) =>
+								tag.toLowerCase().includes(term)
+							)
+					);
+				}
+				return true; // If no search string is provided, don't filter out any items
+			});
+
+		// Sort the filtered array
 		filtered.sort((a, b) => {
 			if (selectedOption === "Sort by price: Lower First") {
 				return a.rate - b.rate;
@@ -242,8 +275,8 @@ export const Selections = () => {
 		});
 
 		setSortedProducts(filtered);
-	}, [selectedOption, isVeg]);
-
+	}, [selectedOption, isVeg, filterTag, search]); 
+	
 	const handleVeg = () => {
 		if (isVeg === "veg") {
 			setIsVeg("");
@@ -261,15 +294,17 @@ export const Selections = () => {
 	};
 
 	return (
-		<div className={styles.SelectionsWrapper}>
-			<div className={styles.FilterContent}>
-				<p>
-					Biriyani{" "}
-					<button>
-						<CloseBtn />
-					</button>
-				</p>
-			</div>
+		<div className={styles.SelectionsWrapper} id="selection">
+			{filterTag && (
+				<div className={styles.FilterContent}>
+					<p>
+						{filterTag}{" "}
+						<button onClick={() => dispatch(addFilter(""))}>
+							<CloseBtn />
+						</button>
+					</p>
+				</div>
+			)}
 			<div className={styles.FilterSection}>
 				<div>
 					<button

@@ -1,9 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Hint, Scooter, Search, Star } from "../../../../assets/svg";
 import styles from "./index.module.css";
+import { RootState } from "../../../../store/store";
+import { useState } from "react";
+import { addSearch } from "../../../../store/items/itemSlice";
 
 export const About = () => {
-	const landing = useSelector((state: any) => state.landing);
+	const landing = useSelector((state: RootState) => state.landing);
+	const dispatch = useDispatch();
+	const [search, setSearch] = useState("");
 	return (
 		<div className={styles.Wrapper}>
 			<div className={styles.Header}>
@@ -34,9 +39,10 @@ export const About = () => {
 					<input
 						type="text"
 						placeholder="What would you like to eat ?"
+						onChange={(e) => setSearch(e.target.value)}
 					/>
 				</div>
-				<button>
+				<button onClick={() => dispatch(addSearch(search))}>
 					<Search colors={"#FFFFFF"} />
 					<p>Find Food</p>
 				</button>
