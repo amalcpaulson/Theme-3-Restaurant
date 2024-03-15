@@ -267,7 +267,7 @@ export const Selections = () => {
               <h3>Filters and sorting</h3>
               <button onClick={handleNavClick}>X</button>
             </div>{" "}
-            <div>
+            <div className={styles.Content}>
               <div>
                 <h3>Veg/Non-veg preference</h3>
                 <div>
@@ -296,7 +296,7 @@ export const Selections = () => {
             </div>
             <div className={styles.ActionButtons}>
               <button>Clear All</button>
-              <button>Apply(13)</button>
+              <button className={styles.apply}>Apply(13)</button>
             </div>
           </div>
         )}
