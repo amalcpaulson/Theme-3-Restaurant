@@ -15,6 +15,7 @@ interface Items {
 	search: string;
 	sort: string;
 	filter: string;
+	tab: string;
 }
 
 interface Product {

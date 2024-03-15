@@ -5,6 +5,7 @@ const initialState: Items = {
 	search: "",
 	sort: "",
 	filter: "",
+	tab: "OrderOnline",
 };
 
 export const itemSlice = createSlice({
@@ -20,9 +21,12 @@ export const itemSlice = createSlice({
 		addFilter: (state, action: PayloadAction<string>) => {
 			state.filter = action.payload;
 		},
+		addTab: (state, action: PayloadAction<string>) => {
+			state.tab = action.payload;
+		}
 	},
 });
 
-export const { addSearch, addSort, addFilter } = itemSlice.actions;
+export const { addSearch, addSort, addFilter, addTab } = itemSlice.actions;
 
 export default itemSlice.reducer;

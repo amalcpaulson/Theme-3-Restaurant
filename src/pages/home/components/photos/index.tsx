@@ -12,7 +12,7 @@ import img9 from "./assets/img9.png";
 export const Photos = () => {
   const data = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.Wrapper} id="Photos">
       <div className={styles.ButtonWrapper}>
         <button className={styles.Active}>All(20)</button>
         <button>Ambience(45)</button>
