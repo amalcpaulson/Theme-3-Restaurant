@@ -45,6 +45,12 @@ const Cart: React.FC = () => {
   const handle = () => {
     navigate("/deliveryaddress");
   };
+
+  const [couponSection, setcouponSection] = useState(false);
+
+  const applycouponbtn = ()=>{
+    setcouponSection(!couponSection)
+  }
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
@@ -136,9 +142,43 @@ const Cart: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <button className={styles.applyCoupon}>
-                <Discount /> Apply Coupon
-              </button>
+              <div className={styles.CouponWrapper}>
+                <button className={styles.applyCoupon} onClick={applycouponbtn}>
+                  <Discount /> Apply Coupon
+                </button>
+                {couponSection && (
+                  <div className={styles.Content}>
+                    <div className={styles.Header}>
+                      <input type="text" placeholder="Enter Coupon Code" />
+                      <button>Apply</button>
+                    </div>
+                    <div className={styles.Body}>
+                      <div className={styles.Individual}>
+                        <p>AVAILABLE COUPON</p>
+                        <div>
+                          <div>
+                            <Discount />
+                            FLAT ₹80
+                          </div>
+                          <p>USE FLATDEAL ABOVE ₹199</p>
+                        </div>
+                        <button>Apply Coupon</button>
+                      </div>{" "}
+                      <div className={styles.Individual}>
+                        <p>AVAILABLE COUPON</p>
+                        <div>
+                          <div>
+                            <Discount />
+                            FLAT ₹80
+                          </div>
+                          <p>USE FLATDEAL ABOVE ₹199</p>
+                        </div>
+                        <button>Apply Coupon</button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div className={styles.Suggestion}>
                 <p>Any Suggestions? We will pass it on.</p>
               </div>
