@@ -192,7 +192,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { navData, productData } from "./Data";
 import { addToCart } from "../../../../store/cart/cartSlice";
 import { FaStar } from "react-icons/fa";
-import { Arrowsvg, FilterSvg, TickSvg, TopPickssvg } from "./assets/svg";
+import { Arrowsvg, FilterSvg, TickSvg } from "./assets/svg";
 import { addFilter, addSort } from "../../../../store/items/itemSlice";
 import { RootState } from "../../../../store/store";
 
@@ -294,190 +294,213 @@ export const Selections = () => {
 	};
 
 	return (
-		<div className={styles.SelectionsWrapper} id="selection">
-			{filterTag && (
-				<div className={styles.FilterContent}>
-					<p>
-						{filterTag}{" "}
-						<button onClick={() => dispatch(addFilter(""))}>
-							<CloseBtn />
-						</button>
-					</p>
-				</div>
-			)}
-			<div className={styles.FilterSection}>
-				<div>
-					<button
-						className={`${isVeg === "veg" ? styles.Active : ""}`}
-						onClick={handleVeg}
-					>
-						<Veg />
-						Veg
-					</button>
-					<button
-						className={`${isVeg === "nonVeg" ? styles.Active : ""}`}
-						onClick={handleNonVeg}
-					>
-						<NonVeg />
-						Non Veg
-					</button>
-				</div>
+    <div className={styles.SelectionsWrapper} id="selection">
+      {filterTag && (
+        <div className={styles.FilterContent}>
+          <p>
+            {filterTag}{" "}
+            <button onClick={() => dispatch(addFilter(""))}>
+              <CloseBtn />
+            </button>
+          </p>
+        </div>
+      )}
+      <div className={styles.FilterSection}>
+        <div>
+          <button
+            className={`${isVeg === "veg" ? styles.Active : ""}`}
+            onClick={handleVeg}
+          >
+            <Veg />
+            Veg
+          </button>
+          <button
+            className={`${isVeg === "nonVeg" ? styles.Active : ""}`}
+            onClick={handleNonVeg}
+          >
+            <NonVeg />
+            Non Veg
+          </button>
+        </div>
 
-				<div className={styles.dropdown}>
-					<div
-						className={styles.dropdownHeader}
-						onClick={toggleDropdown}
-					>
-						<div>
-							{" "}
-							<p>
-								<Arrowsvg />
-							</p>{" "}
-							<p style={{ transform: "rotate(180deg)" }}>
-								<Arrowsvg />
-							</p>
-						</div>
-						{selectedOption}
-					</div>
-					{isOpen && (
-						<div className={styles.dropdownList}>
-							{options.map((option, index) => (
-								<div
-									key={index}
-									className={styles.dropdownItem}
-									onClick={() => handleSort(option)}
-								>
-									{option}{" "}
-									{selectedOption == option ? (
-										<TickSvg />
-									) : (
-										""
-									)}
-								</div>
-							))}
-						</div>
-					)}
-				</div>
-			</div>
+        <div className={styles.dropdown}>
+          <div className={styles.dropdownHeader} onClick={toggleDropdown}>
+            <div>
+              {" "}
+              <p>
+                <Arrowsvg />
+              </p>{" "}
+              <p style={{ transform: "rotate(180deg)" }}>
+                <Arrowsvg />
+              </p>
+            </div>
+            {selectedOption}
+          </div>
+          {isOpen && (
+            <div className={styles.dropdownList}>
+              {options.map((option, index) => (
+                <div
+                  key={index}
+                  className={styles.dropdownItem}
+                  onClick={() => handleSort(option)}
+                >
+                  {option} {selectedOption == option ? <TickSvg /> : ""}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
 
-			<div className={styles.FilterSectionMobile}>
-				<button onClick={handleNavClick}>
-					Filters <FilterSvg />
-				</button>
-				{activated && (
-					<div className={styles.Individuals}>
-						<div className={styles.Header}>
-							<h3>Filters and sorting</h3>
-							<button onClick={handleNavClick}>X</button>
-						</div>{" "}
-						<div className={styles.Content}>
-							<div>
-								<h3>Veg/Non-veg preference</h3>
-								<div>
-									<button>
-										<Veg /> Veg
-									</button>
-									<button>
-										<NonVeg /> Non Veg
-									</button>
-								</div>
-							</div>
-							<div>
-								<h3>Top Picks</h3>
-								<button>
-									<TopPickssvg /> Top rated
-								</button>
-							</div>
-							<div>
-								<h3>Sort By</h3>
-								<div>
-									<button>Price : Lower first</button>
-									<button>Price : Higher first</button>
-									<button>Rating - high to low</button>
-								</div>
-							</div>
-						</div>
-						<div className={styles.ActionButtons}>
-							<button>Clear All</button>
-							<button className={styles.apply}>Apply(13)</button>
-						</div>
-					</div>
-				)}
-			</div>
-			<div className={styles.Selections}>
-				<div className={styles.LeftNav}>
-					{navData.map(({ name }, index) => (
-						<button
-							key={index}
-							className={active === index ? styles.activebtn : ""}
-							onClick={() => setActive(index)}
-						>
-							{name}
-						</button>
-					))}
-				</div>
+      <div className={styles.FilterSectionMobile}>
+        <button onClick={handleNavClick}>
+          Filters <FilterSvg />
+        </button>
+        {activated && (
+          <div className={styles.Individuals}>
+            <div className={styles.Header}>
+              <h3>Filters and sorting</h3>
+              <button onClick={handleNavClick}>X</button>
+            </div>{" "}
+            <div className={styles.Content}>
+              <div>
+                <h3>Veg/Non-veg preference</h3>
+                <div>
+                  <button
+                    className={`${isVeg === "veg" ? styles.Active : ""}`}
+                    onClick={handleVeg}
+                  >
+                    <Veg />
+                    &nbsp;Veg
+                  </button>
+                  <button
+                    className={`${isVeg === "nonVeg" ? styles.Active : ""}`}
+                    onClick={handleNonVeg}
+                  >
+                    <NonVeg />
+                    &nbsp;Non Veg
+                  </button>
+                </div>
+              </div>
+              {/* <div>
+                <h3>Top Picks</h3>
+                <button>
+                  <TopPickssvg /> Top rated
+                </button>
+              </div> */}
+              <div>
+                <h3>Sort By</h3>
+                <div>
+                  <button
+                    onClick={() => {
+                      setSelectedOption("Sort by price: Lower First");
+                    }}
+                    className={`${
+                      selectedOption === "Sort by price: Lower First"
+                        ? styles.Active
+                        : ""
+                    }`}
+                  >
+                    Price : Lower first
+                  </button>
+                  <button
+                    onClick={() =>
+                      setSelectedOption("Sort by price: Higher First")
+                    }
+                    className={`${
+                      selectedOption === "Sort by price: Higher First"
+                        ? styles.Active
+                        : ""
+                    }`}
+                  >
+                    Price : Higher first
+                  </button>
+                  <button
+                    onClick={() =>
+                      setSelectedOption("Sort by rating: Higher First")
+                    }
+                    className={`${
+                      selectedOption === "Sort by rating: Higher First"
+                        ? styles.Active
+                        : ""
+                    }`}
+                  >
+                    Rating - high to low
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.ActionButtons}>
+              <button
+                onClick={() => {
+                  setSelectedOption("");
+                  setIsVeg("");
+                  dispatch(addFilter(""));
+                }}
+              >
+                Clear All
+              </button>
+              <button className={styles.apply} onClick={handleNavClick}>
+                Apply(13)
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className={styles.Selections}>
+        <div className={styles.LeftNav}>
+          {navData.map(({ name }, index) => (
+            <button
+              key={index}
+              className={active === index ? styles.activebtn : ""}
+              onClick={() => setActive(index)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
 
-				<div className={styles.RightDiv}>
-					{sortedProducts.map(
-						(
-							{ name, img, rate, quantity, id, rating, veg },
-							index
-						) => (
-							<div key={index} className={styles.Individual}>
-								{veg ? <Veg /> : <NonVeg />}
-								<p className={styles.RatingTop}>
-									{rating}
-									<FaStar />
-								</p>{" "}
-								<img src={img} alt={`Image of ${name}`} />{" "}
-								<p className={styles.Name}>{name}</p>{" "}
-								<p className={styles.Rate}>₹ {rate}</p>
-								{quantity === 0 ? (
-									<button>Add</button>
-								) : (
-									<div className={styles.ButtonWrap}>
-										<button
-											aria-label={`Add ${name} to cart`}
-											onClick={() =>
-												dispatch(
-													addToCart({
-														img,
-														name,
-														rate,
-														quantity,
-														id,
-													})
-												)
-											}
-											className={styles.Minus}
-										>
-											<p></p>
-										</button>
-										<p>1</p>
-										<button
-											aria-label={`Add ${name} to cart`}
-											onClick={() =>
-												dispatch(
-													addToCart({
-														img,
-														name,
-														rate,
-														quantity,
-														id,
-													})
-												)
-											}
-											className={styles.Add}
-										>
-											+
-										</button>
-									</div>
-								)}
-							</div>
-						)
-					)}
-				</div>
-			</div>
-		</div>
-	);
+        <div className={styles.RightDiv}>
+          {sortedProducts.map(
+            ({ name, img, rate, quantity, id, rating, veg }, index) => (
+              <div key={index} className={styles.Individual}>
+                {veg ? <Veg /> : <NonVeg />}
+                <p className={styles.RatingTop}>
+                  {rating}
+                  <FaStar />
+                </p>{" "}
+                <img src={img} alt={`Image of ${name}`} />{" "}
+                <p className={styles.Name}>{name}</p>{" "}
+                <p className={styles.Rate}>₹ {rate}</p>
+                {quantity === 0 ? (
+                  <button>Add</button>
+                ) : (
+                  <div className={styles.ButtonWrap}>
+                   
+                    <button
+                      aria-label={`Add ${name} to cart`}
+                      onClick={() =>
+                        dispatch(
+                          addToCart({
+                            img,
+                            name,
+                            rate,
+                            quantity,
+                            id,
+                          })
+                        )
+                      }
+                      className={styles.Add}
+                    >
+                     Add
+                    </button>
+                  </div>
+                )}
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
